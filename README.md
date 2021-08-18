@@ -1,3 +1,5 @@
 # Setting up K8s manifests to Kustomize format
 
-Follow directory structure and  file content to learn more
+Go through the directories and files to learn more
+
+Configurations are based off: https://github.com/luqmanbarry/coffee-shop-yaml.git 
