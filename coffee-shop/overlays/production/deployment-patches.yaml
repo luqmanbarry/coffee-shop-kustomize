@@ -7,5 +7,6 @@ spec:
     spec:
       containers:
       - name: coffee-shop
-        image: nexus-registry-nexus.apps.cluster-a423.dynamic.opentlc.com/user14-coffee-shop:prod-2021-04-05-20-51-51
+        image: nexus-registry-nexus.apps.cluster-a423.dynamic.opentlc.com/user14-coffee-shop:prod-2021-08-17-18-19-50
+                                                                                             
 
