@@ -4,6 +4,8 @@ metadata:
   annotations:
     app.openshift.io/connects-to: '["coffee-shop-database",{"apiVersion":"apps/v1","kind":"Deployment","name":"coffee-shop-database"},{"apiVersion":"serving.knative.dev/v1","kind":"Service","name":"barista"}]'
   labels:
+    app.kubernetes.io/component: coffee-shop
+    app.kubernetes.io/instance: coffee-shop
     app.kubernetes.io/part-of: coffee-shop
     app.openshift.io/runtime: quarkus
   name: coffee-shop
@@ -15,12 +17,19 @@ spec:
     matchLabels:
       app.kubernetes.io/part-of: coffee-shop
       app.openshift.io/runtime: quarkus
+      deployment: coffee-shop
   strategy:
     rollingUpdate:
       maxSurge: 25%
       maxUnavailable: 25%
     type: RollingUpdate
   template:
+    metadata:
+      annotations:
+      labels:
+        app.kubernetes.io/part-of: coffee-shop
+        app.openshift.io/runtime: quarkus
+        deployment: coffee-shop
     spec:
       containers:
       - envFrom:
